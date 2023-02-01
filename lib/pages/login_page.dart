@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/pages/home_page.dart';
 import 'package:library_app/pages/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -58,10 +59,11 @@ class LoginPage extends StatelessWidget {
                           TextButton(
                             onPressed: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SignupPage()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignupPage(),
+                                ),
+                              );
                             },
                             child: const Text("Cadastre-se"),
                           ),
@@ -125,9 +127,16 @@ class LoginPage extends StatelessWidget {
                             Radius.circular(15),
                           ),
                         ),
-                        child: const TextButton(
-                          onPressed: null,
-                          child: Text(
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          },
+                          child: const Text(
                             "Continuar",
                             style: TextStyle(color: Colors.white),
                           ),
