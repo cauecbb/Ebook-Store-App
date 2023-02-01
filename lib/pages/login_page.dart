@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/pages/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -32,7 +33,11 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, top: 60),
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    right: 15,
+                    top: 60,
+                  ),
                   child: Column(
                     children: <Widget>[
                       Row(
@@ -50,9 +55,15 @@ class LoginPage extends StatelessWidget {
                               Text("Acesse sua conta para continuar"),
                             ],
                           ),
-                          const TextButton(
-                            onPressed: null,
-                            child: Text("Cadastre-se"),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SignupPage()));
+                            },
+                            child: const Text("Cadastre-se"),
                           ),
                         ],
                       ),
