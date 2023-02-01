@@ -16,6 +16,47 @@ class HomePage extends StatelessWidget {
               height: 60,
             ),
             search(),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text(
+              "Categorias",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 90,
+              child: categoryList(),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const <Widget>[
+                Text(
+                  "Mais lidos",
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+                TextButton(
+                  onPressed: null,
+                  child: Text("Ver tudo"),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 350,
+              child: bookList(),
+            )
           ],
         ),
       ),
@@ -25,6 +66,7 @@ class HomePage extends StatelessWidget {
 
 Widget search() {
   return Container(
+    padding: const EdgeInsets.only(left: 20),
     height: 60,
     decoration: BoxDecoration(
       color: Colors.black.withOpacity(0.1),
@@ -55,6 +97,115 @@ Widget search() {
             ),
           ),
         ),
+      ],
+    ),
+  );
+}
+
+Widget categoryList() {
+  return ListView(
+    scrollDirection: Axis.horizontal,
+    children: [
+      categoryItem(),
+      categoryItem(),
+      categoryItem(),
+      categoryItem(),
+      categoryItem(),
+      categoryItem(),
+      categoryItem(),
+    ],
+  );
+}
+
+Widget categoryItem() {
+  return Container(
+    width: 70,
+    height: 70,
+    margin: const EdgeInsets.all(10),
+    padding: const EdgeInsets.all(10),
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black12,
+          offset: Offset(1, 1),
+          blurRadius: 5,
+          spreadRadius: 2,
+        ),
+      ],
+      borderRadius: BorderRadius.all(
+        Radius.circular(64),
+      ),
+    ),
+    child: Image.asset(
+      "assets/categoria00.png",
+    ),
+  );
+}
+
+Widget bookList() {
+  return ListView(
+    scrollDirection: Axis.horizontal,
+    children: [
+      bookItem(),
+      bookItem(),
+      bookItem(),
+      bookItem(),
+      bookItem(),
+      bookItem(),
+    ],
+  );
+}
+
+Widget bookItem() {
+  return Container(
+    padding: const EdgeInsets.all(10),
+    margin: const EdgeInsets.all(5),
+    width: 170,
+    color: Colors.black12,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Image.asset(
+          "assets/livro.jpg",
+          width: 170,
+          height: 200,
+          fit: BoxFit.cover,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const SizedBox(
+          height: 60,
+          child: Text(
+            "Titulo do Livro",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        const Text(
+          "Autor",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        const Text(
+          "R\$ 200",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        )
       ],
     ),
   );
