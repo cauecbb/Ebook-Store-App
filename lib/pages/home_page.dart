@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/pages/book_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -53,9 +54,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Container(
+            SizedBox(
               height: 350,
-              child: bookList(),
+              child: bookList(context),
             )
           ],
         ),
@@ -143,21 +144,21 @@ Widget categoryItem() {
   );
 }
 
-Widget bookList() {
+Widget bookList(BuildContext context) {
   return ListView(
     scrollDirection: Axis.horizontal,
     children: [
-      bookItem(),
-      bookItem(),
-      bookItem(),
-      bookItem(),
-      bookItem(),
-      bookItem(),
+      bookItem(context),
+      bookItem(context),
+      bookItem(context),
+      bookItem(context),
+      bookItem(context),
+      bookItem(context),
     ],
   );
 }
 
-Widget bookItem() {
+Widget bookItem(BuildContext context) {
   return Container(
     padding: const EdgeInsets.all(10),
     margin: const EdgeInsets.all(5),
@@ -166,11 +167,20 @@ Widget bookItem() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Image.asset(
-          "assets/livro.jpg",
-          width: 170,
-          height: 200,
-          fit: BoxFit.cover,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BookPage(),
+                ));
+          },
+          child: Image.asset(
+            "assets/livro.jpg",
+            width: 170,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
         ),
         const SizedBox(
           height: 10,
