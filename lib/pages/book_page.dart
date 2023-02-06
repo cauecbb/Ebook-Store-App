@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
 class BookPage extends StatelessWidget {
-  const BookPage({super.key});
+  final String image;
+  final String title;
+  final String autor;
+  final double price;
+
+  const BookPage({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.autor,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +29,7 @@ class BookPage extends StatelessWidget {
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 background: Image.asset(
-                  "assets/livro.jpg",
+                  image,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
@@ -27,29 +38,29 @@ class BookPage extends StatelessWidget {
           ];
         },
         body: ListView(
-          children: const <Widget>[
+          children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: 10,
                 left: 10,
                 right: 10,
               ),
               child: Text(
-                "Clean Code",
-                style: TextStyle(
+                title,
+                style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Text(
-                "Autor: Robert C. Martin",
-                style: TextStyle(fontSize: 16),
+                autor,
+                style: const TextStyle(fontSize: 16),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(10),
               child: Text(
                 "Detalhes",
@@ -59,7 +70,7 @@ class BookPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(10),
               child: Text(
                 "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.",
