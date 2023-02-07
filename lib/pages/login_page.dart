@@ -58,13 +58,13 @@ class _LoginPageState extends State<LoginPage> {
                             Column(
                               children: const <Widget>[
                                 Text(
-                                  "Bem-Vindo(a),",
+                                  "Faça seu login",
                                   style: TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                Text("Acesse sua conta para continuar"),
+                                Text("ou crie uma conta para continuar"),
                               ],
                             ),
                             TextButton(
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 );
                               },
-                              child: const Text("Cadastre-se"),
+                              child: const Text("Criar conta"),
                             ),
                           ],
                         ),

@@ -38,20 +38,20 @@ class SignupPage extends StatelessWidget {
                   padding: const EdgeInsets.only(
                     left: 15,
                     right: 15,
-                    top: 60,
+                    top: 50,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       const Text(
-                        "Cadastre-se",
+                        "Criar conta",
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       const SizedBox(
-                        height: 60,
+                        height: 50,
                       ),
                       TextFormField(
                         autofocus: true,
@@ -119,7 +119,7 @@ class SignupPage extends StatelessWidget {
                         child: const TextButton(
                           onPressed: null,
                           child: Text(
-                            "Cadastrar",
+                            "Se Cadastrar",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
