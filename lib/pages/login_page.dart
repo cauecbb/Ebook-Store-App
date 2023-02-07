@@ -134,9 +134,16 @@ class _LoginPageState extends State<LoginPage> {
                         Container(
                           height: 40,
                           alignment: Alignment.centerRight,
-                          child: const TextButton(
-                            onPressed: null,
-                            child: Text(
+                          child: TextButton(
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                      "Foi enviado um email para redefinir sua senha."),
+                                ),
+                              );
+                            },
+                            child: const Text(
                               "Esqueci a senha",
                             ),
                           ),
@@ -156,8 +163,6 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               if (_formkey.currentState!.validate()) {
                                 _formkey.currentState!.save();
-                                print(_email);
-                                print(_password);
 
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
