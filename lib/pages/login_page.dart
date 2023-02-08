@@ -17,257 +17,259 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          color: const Color(0xFFF5F5F5),
-          padding: const EdgeInsets.only(
-            top: 80,
-            left: 20,
-            right: 20,
-            bottom: 40,
-          ),
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 480,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  border: Border(),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(1, 2.0),
-                      blurRadius: 5,
-                      spreadRadius: 1,
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 15,
-                    right: 15,
-                    top: 60,
-                  ),
-                  child: Form(
-                    key: _formkey,
-                    child: Column(
+      body: Container(
+        color: const Color(0xFF9ADCB9),
+        padding: const EdgeInsets.only(
+          top: 78,
+        ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 15,
+                right: 15,
+              ),
+              child: Form(
+                key: _formkey,
+                child: Column(
+                  children: <Widget>[
+                    Row(
                       children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Column(
-                              children: const <Widget>[
-                                Text(
-                                  "Faça seu login",
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text("ou crie uma conta para continuar"),
-                              ],
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const <Widget>[
+                            Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Color(0xFF332E1D),
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.left,
                             ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SignupPage(),
-                                  ),
-                                );
-                              },
-                              child: const Text("Criar conta"),
+                            Text(
+                              "Acesse sua conta com email e senha",
+                              style: TextStyle(
+                                color: Color(0xFF332E1D),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.left,
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 60,
-                        ),
-                        TextFormField(
-                          autofocus: true,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            labelText: "Email",
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                            ),
-                          ),
-                          style: const TextStyle(
-                            fontSize: 20,
-                          ),
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "Email Inválido";
-                            }
-                            return null;
-                          },
-                          onSaved: (input) => _email = input!,
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        TextFormField(
-                          autofocus: true,
-                          keyboardType: TextInputType.text,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            labelText: "Senha",
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                            ),
-                          ),
-                          style: const TextStyle(
-                            fontSize: 20,
-                          ),
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "Senha Inválida";
-                            }
-                            return null;
-                          },
-                          onSaved: (input) => _password = input!,
-                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Container(
-                          height: 40,
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                      "Foi enviado um email para redefinir sua senha."),
-                                ),
-                              );
-                            },
-                            child: const Text(
-                              "Esqueci a senha",
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          width: double.infinity,
+                          width: 325,
+                          height: 56,
                           decoration: const BoxDecoration(
-                            color: Color.fromARGB(255, 180, 163, 140),
+                            color: Color(0xFFFEFFEE),
                             borderRadius: BorderRadius.all(
                               Radius.circular(15),
                             ),
                           ),
-                          child: TextButton(
-                            onPressed: () {
-                              if (_formkey.currentState!.validate()) {
-                                _formkey.currentState!.save();
-
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                      content: Text("Bem vindo(a), $_email!")),
-                                );
-                              }
-                            },
-                            child: const Text(
-                              "Continuar",
-                              style: TextStyle(color: Colors.white),
+                          child: TextFormField(
+                            autofocus: true,
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: const InputDecoration(
+                              labelText: "E-mail",
+                              labelStyle: TextStyle(
+                                color: Color(0xB3332E1D),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
                             ),
+                            style: const TextStyle(
+                              fontSize: 20,
+                            ),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "E-mail Inválido";
+                              }
+                              return null;
+                            },
+                            onSaved: (input) => _email = input!,
                           ),
-                        )
+                        ),
                       ],
                     ),
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.only(top: 15, bottom: 15),
-                child: const Text(
-                  "OU",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        border: Border.all(
-                          width: 2.0,
-                          color: Colors.blue,
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 325,
+                      height: 56,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFEFFEE),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
                         ),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(40),
+                      ),
+                      child: TextFormField(
+                        autofocus: true,
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          labelText: "Senha",
+                          labelStyle: TextStyle(
+                            color: Color(0xB3332E1D),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                        style: const TextStyle(
+                          fontSize: 20,
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Senha Inválida";
+                          }
+                          return null;
+                        },
+                        onSaved: (input) => _password = input!,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: 236,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF5AC7AA),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
                         ),
                       ),
                       child: TextButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 24,
-                              width: 30,
-                              child: Image.asset(
-                                "assets/facebook.png",
-                              ),
-                            ),
-                            const Text(
-                              "Entrar com Facebook",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
+                        onPressed: () {
+                          if (_formkey.currentState!.validate()) {
+                            _formkey.currentState!.save();
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Bem vindo(a), $_email!")),
+                            );
+                          }
+                        },
+                        child: const Text(
+                          "Entrar",
+                          style: TextStyle(
+                            color: Color(0xFF332E1D),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          width: 2.0,
-                          color: Colors.white,
-                        ),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(40),
-                        ),
-                      ),
+                    Container(
+                      height: 40,
+                      alignment: Alignment.center,
                       child: TextButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 24,
-                              width: 30,
-                              child: Image.asset(
-                                "assets/google.png",
-                              ),
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                  "Foi enviado um email para redefinir sua senha."),
                             ),
-                            const Text(
-                              "Entrar com Google",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
+                          );
+                        },
+                        child: const Text(
+                          "Esqueceu a senha?",
+                          style: TextStyle(
+                            color: Color(0xFF332E1D),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              child: const Text(
+                "OU",
+                style: TextStyle(
+                  color: Color(0xFFFEFFEE),
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 84,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    border: Border.all(
+                      width: 2.0,
+                      color: Colors.blue,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(40),
+                    ),
                   ),
-                ],
-              )
-            ],
-          ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: SizedBox(
+                      height: 24,
+                      width: 30,
+                      child: Image.asset(
+                        "assets/facebook.png",
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 36),
+                Container(
+                  width: 84,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      width: 2.0,
+                      color: Colors.white,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(40),
+                    ),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: SizedBox(
+                      height: 24,
+                      width: 30,
+                      child: Image.asset(
+                        "assets/google.png",
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignupPage(),
+                  ),
+                );
+              },
+              child: const Text("Cadastre-se"),
+            ),
+          ],
         ),
       ),
     );
