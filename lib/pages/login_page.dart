@@ -20,7 +20,8 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         color: const Color(0xFF9ADCB9),
         padding: const EdgeInsets.only(
-          top: 78,
+          left: 20,
+          top: 120,
         ),
         child: Column(
           children: <Widget>[
@@ -32,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Form(
                 key: _formkey,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Row(
                       children: <Widget>[
@@ -64,11 +66,10 @@ class _LoginPageState extends State<LoginPage> {
                       height: 15,
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: <Widget>[
                         Container(
-                          width: 325,
-                          height: 56,
+                          width: 300,
+                          height: 52,
                           decoration: const BoxDecoration(
                             color: Color(0xFFFEFFEE),
                             borderRadius: BorderRadius.all(
@@ -104,8 +105,8 @@ class _LoginPageState extends State<LoginPage> {
                       height: 10,
                     ),
                     Container(
-                      width: 325,
-                      height: 56,
+                      width: 300,
+                      height: 52,
                       decoration: const BoxDecoration(
                         color: Color(0xFFFEFFEE),
                         borderRadius: BorderRadius.all(
@@ -136,60 +137,61 @@ class _LoginPageState extends State<LoginPage> {
                         onSaved: (input) => _password = input!,
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 236,
-                      decoration: const BoxDecoration(
-                        color: Color(0xFF5AC7AA),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                      ),
-                      child: TextButton(
-                        onPressed: () {
-                          if (_formkey.currentState!.validate()) {
-                            _formkey.currentState!.save();
-
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Bem vindo(a), $_email!")),
-                            );
-                          }
-                        },
-                        child: const Text(
-                          "Entrar",
-                          style: TextStyle(
-                            color: Color(0xFF332E1D),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: TextButton(
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                  "Foi enviado um email para redefinir sua senha."),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          "Esqueceu a senha?",
-                          style: TextStyle(
-                            color: Color(0xFF332E1D),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: 215,
+              height: 43,
+              decoration: const BoxDecoration(
+                color: Color(0xFF5AC7AA),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  if (_formkey.currentState!.validate()) {
+                    _formkey.currentState!.save();
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Bem vindo(a), $_email!")),
+                    );
+                  }
+                },
+                child: const Text(
+                  "Entrar",
+                  style: TextStyle(
+                    color: Color(0xFF332E1D),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 40,
+              alignment: Alignment.center,
+              child: TextButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                          "Foi enviado um email para redefinir sua senha."),
+                    ),
+                  );
+                },
+                child: const Text(
+                  "Esqueceu a senha?",
+                  style: TextStyle(
+                    color: Color(0xFF332E1D),
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
