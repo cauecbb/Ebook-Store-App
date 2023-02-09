@@ -100,7 +100,7 @@ Widget bookItem() {
           height: 100,
           margin: const EdgeInsets.all(10),
           child: Image.asset(
-            "assets/livro.jpg",
+            "assets/img/livro.jpg",
             fit: BoxFit.fitWidth,
           ),
         ),

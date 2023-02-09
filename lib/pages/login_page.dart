@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         color: const Color(0xFF9ADCB9),
         padding: const EdgeInsets.only(
           left: 20,
-          top: 120,
+          top: 100,
         ),
         child: Column(
           children: <Widget>[
@@ -70,6 +70,9 @@ class _LoginPageState extends State<LoginPage> {
                         Container(
                           width: 300,
                           height: 52,
+                          padding: const EdgeInsets.only(
+                            left: 3,
+                          ),
                           decoration: const BoxDecoration(
                             color: Color(0xFFFEFFEE),
                             borderRadius: BorderRadius.all(
@@ -80,6 +83,8 @@ class _LoginPageState extends State<LoginPage> {
                             autofocus: true,
                             keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              prefixIcon: Icon(Icons.mail),
                               labelText: "E-mail",
                               labelStyle: TextStyle(
                                 color: Color(0xB3332E1D),
@@ -107,6 +112,9 @@ class _LoginPageState extends State<LoginPage> {
                     Container(
                       width: 300,
                       height: 52,
+                      padding: const EdgeInsets.only(
+                        left: 16,
+                      ),
                       decoration: const BoxDecoration(
                         color: Color(0xFFFEFFEE),
                         borderRadius: BorderRadius.all(
@@ -118,6 +126,8 @@ class _LoginPageState extends State<LoginPage> {
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: const InputDecoration(
+                          icon: Icon(Icons.lock),
+                          border: InputBorder.none,
                           labelText: "Senha",
                           labelStyle: TextStyle(
                             color: Color(0xB3332E1D),
@@ -228,7 +238,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 24,
                       width: 30,
                       child: Image.asset(
-                        "assets/facebook.png",
+                        "assets/img/facebook.png",
                       ),
                     ),
                   ),
@@ -253,7 +263,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 24,
                       width: 30,
                       child: Image.asset(
-                        "assets/google.png",
+                        "assets/img/google.png",
                       ),
                     ),
                   ),

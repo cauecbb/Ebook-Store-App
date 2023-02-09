@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Ebook Store',
       theme: ThemeData(
         primarySwatch: Colors.brown,
+        fontFamily: "Kadwa",
       ),
       home: const DefaultTabController(
         length: 3,

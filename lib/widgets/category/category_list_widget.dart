@@ -10,11 +10,11 @@ class CategoryList extends StatelessWidget {
     return ListView(
       scrollDirection: Axis.horizontal,
       children: const [
-        CategoryItem(image: 'assets/categoria00.png'),
-        CategoryItem(image: 'assets/categoria00.png'),
-        CategoryItem(image: 'assets/categoria00.png'),
-        CategoryItem(image: 'assets/categoria00.png'),
-        CategoryItem(image: 'assets/categoria00.png'),
+        CategoryItem(image: 'assets/img/categoria00.png'),
+        CategoryItem(image: 'assets/img/categoria00.png'),
+        CategoryItem(image: 'assets/img/categoria00.png'),
+        CategoryItem(image: 'assets/img/categoria00.png'),
+        CategoryItem(image: 'assets/img/categoria00.png'),
       ],
     );
   }
