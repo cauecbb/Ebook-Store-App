@@ -13,31 +13,31 @@ class BookList extends StatelessWidget {
       children: const [
         BookItem(
           autor: 'Robert C. Martin',
-          image: 'assets/img/livro.jpg',
+          image: 'assets/img/livro.png',
           price: 145,
           title: 'Clean Code',
         ),
         BookItem(
           autor: 'Robert C. Martin',
-          image: 'assets/img/livro.jpg',
+          image: 'assets/img/livro.png',
           price: 145,
           title: 'Clean Code',
         ),
         BookItem(
           autor: 'Robert C. Martin',
-          image: 'assets/img/livro.jpg',
+          image: 'assets/img/livro.png',
           price: 145,
           title: 'Clean Code',
         ),
         BookItem(
           autor: 'Robert C. Martin',
-          image: 'assets/img/livro.jpg',
+          image: 'assets/img/livro.png',
           price: 145,
           title: 'Clean Code',
         ),
         BookItem(
           autor: 'Robert C. Martin',
-          image: 'assets/img/livro.jpg',
+          image: 'assets/img/livro.png',
           price: 145,
           title: 'Clean Code',
         ),
