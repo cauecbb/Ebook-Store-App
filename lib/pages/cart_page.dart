@@ -23,16 +23,13 @@ class CartPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(
                     left: 20,
-                    top: 20,
+                    top: 5,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const <Widget>[
                       Text(
                         "TOTAL",
-                      ),
-                      SizedBox(
-                        height: 5,
                       ),
                       Text(
                         "\$4250",
@@ -46,6 +43,9 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  padding: const EdgeInsets.only(
+                    top: 5,
+                  ),
                   height: 50,
                   width: 150,
                   decoration: const BoxDecoration(
@@ -97,7 +97,7 @@ Widget bookItem() {
       children: <Widget>[
         Container(
           width: 100,
-          height: 100,
+          height: 120,
           margin: const EdgeInsets.all(10),
           child: Image.asset(
             "assets/img/livro.jpg",
@@ -106,14 +106,13 @@ Widget bookItem() {
         ),
         Padding(
           padding: const EdgeInsets.only(
-            top: 30,
             left: 10,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const Text(
-                "Título do produto",
+                "Título do Livro",
                 style: TextStyle(
                   fontSize: 18,
                 ),

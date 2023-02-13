@@ -12,6 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formkey = GlobalKey<FormState>();
 
   late String _email;
+  // ignore: unused_field
   late String _password;
 
   @override

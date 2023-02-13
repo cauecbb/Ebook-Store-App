@@ -46,11 +46,8 @@ class BookItem extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
           SizedBox(
-            height: 60,
+            height: 50,
             child: Text(
               title,
               style: const TextStyle(
@@ -59,18 +56,12 @@ class BookItem extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 5,
-          ),
           Text(
             autor,
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
             ),
-          ),
-          const SizedBox(
-            height: 5,
           ),
           Text(
             "R\$ $price",

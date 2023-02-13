@@ -76,7 +76,7 @@ flutter:
   fonts:
     - family: Kadwa
       fonts:
-        - asset: assets/fonts/Kadwa-Regular.ttf
+        - asset: assets/fonts/Kadwa-Bold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
