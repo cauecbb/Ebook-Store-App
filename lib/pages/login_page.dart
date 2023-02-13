@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/pages/home_page.dart';
 import 'package:library_app/pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -22,130 +23,163 @@ class _LoginPageState extends State<LoginPage> {
         color: const Color(0xFF9ADCB9),
         padding: const EdgeInsets.only(
           left: 20,
-          top: 100,
         ),
         child: Column(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(
-                left: 15,
                 right: 15,
+                top: 40,
               ),
               child: Form(
                 key: _formkey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Column(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) => const HomePage(),
+                            //   ),
+                            // );
+                          },
+                          child: SizedBox(
+                            child: Image.asset(
+                              "assets/img/botao-voltar.png",
+                              height: 24,
+                              width: 20,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 70,
+                    ),
                     Row(
                       children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const <Widget>[
-                            Text(
-                              "Login",
-                              style: TextStyle(
-                                color: Color(0xFF332E1D),
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
+                        Container(
+                          padding: const EdgeInsets.only(
+                            left: 15,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const <Widget>[
+                              Text(
+                                "Login",
+                                style: TextStyle(
+                                  color: Color(0xFF332E1D),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,
                               ),
-                              textAlign: TextAlign.left,
-                            ),
-                            Text(
-                              "Acesse sua conta com email e senha",
-                              style: TextStyle(
-                                color: Color(0xFF332E1D),
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
+                              Text(
+                                "Acesse sua conta com email e senha",
+                                style: TextStyle(
+                                  color: Color(0xFF332E1D),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,
                               ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
                     const SizedBox(
                       height: 15,
                     ),
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          width: 300,
-                          height: 52,
-                          padding: const EdgeInsets.only(
-                            left: 3,
-                          ),
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFFEFFEE),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(15),
-                            ),
-                          ),
-                          child: TextFormField(
-                            autofocus: true,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              prefixIcon: Icon(Icons.mail),
-                              labelText: "E-mail",
-                              labelStyle: TextStyle(
-                                color: Color(0xB3332E1D),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              ),
-                            ),
-                            style: const TextStyle(
-                              fontSize: 20,
-                            ),
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return "E-mail Inválido";
-                              }
-                              return null;
-                            },
-                            onSaved: (input) => _email = input!,
+                    Container(
+                      padding: const EdgeInsets.only(left: 15),
+                      child: Container(
+                        width: 300,
+                        height: 52,
+                        padding: const EdgeInsets.only(
+                          left: 3,
+                        ),
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFFEFFEE),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
                           ),
                         ),
-                      ],
+                        child: TextFormField(
+                          autofocus: false,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            prefixIcon: Icon(Icons.mail),
+                            labelText: "E-mail",
+                            labelStyle: TextStyle(
+                              color: Color(0xB3332E1D),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          style: const TextStyle(
+                            fontSize: 20,
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "E-mail Inválido";
+                            }
+                            return null;
+                          },
+                          onSaved: (input) => _email = input!,
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Container(
-                      width: 300,
-                      height: 52,
-                      padding: const EdgeInsets.only(
-                        left: 16,
-                      ),
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFFEFFEE),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
+                      padding: const EdgeInsets.only(left: 15),
+                      child: Container(
+                        width: 300,
+                        height: 52,
+                        padding: const EdgeInsets.only(
+                          left: 16,
                         ),
-                      ),
-                      child: TextFormField(
-                        autofocus: true,
-                        keyboardType: TextInputType.text,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          icon: Icon(Icons.lock),
-                          border: InputBorder.none,
-                          labelText: "Senha",
-                          labelStyle: TextStyle(
-                            color: Color(0xB3332E1D),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFFEFFEE),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
                           ),
                         ),
-                        style: const TextStyle(
-                          fontSize: 20,
+                        child: TextFormField(
+                          autofocus: false,
+                          keyboardType: TextInputType.text,
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                            icon: Icon(Icons.lock),
+                            border: InputBorder.none,
+                            labelText: "Senha",
+                            labelStyle: TextStyle(
+                              color: Color(0xB3332E1D),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          style: const TextStyle(
+                            fontSize: 20,
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Senha Inválida";
+                            }
+                            return null;
+                          },
+                          onSaved: (input) => _password = input!,
                         ),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Senha Inválida";
-                          }
-                          return null;
-                        },
-                        onSaved: (input) => _password = input!,
                       ),
                     ),
                   ],
@@ -244,7 +278,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 36),
+                const SizedBox(
+                  width: 36,
+                ),
                 Container(
                   width: 84,
                   height: 44,
