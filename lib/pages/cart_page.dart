@@ -6,6 +6,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFEFFEE),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

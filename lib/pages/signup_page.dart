@@ -6,13 +6,13 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF9ADCB9),
       appBar: AppBar(
         backgroundColor: Colors.brown.withOpacity(0),
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Container(
-          color: const Color(0xFFF5F5F5),
           padding: const EdgeInsets.only(
             top: 80,
             left: 20,
@@ -54,7 +54,7 @@ class SignupPage extends StatelessWidget {
                         height: 50,
                       ),
                       TextFormField(
-                        autofocus: true,
+                        autofocus: false,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           labelText: "Nome Completo",
@@ -72,7 +72,7 @@ class SignupPage extends StatelessWidget {
                         height: 10,
                       ),
                       TextFormField(
-                        autofocus: true,
+                        autofocus: false,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: "Email",
@@ -90,7 +90,7 @@ class SignupPage extends StatelessWidget {
                         height: 10,
                       ),
                       TextFormField(
-                        autofocus: true,
+                        autofocus: false,
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: InputDecoration(
@@ -111,7 +111,7 @@ class SignupPage extends StatelessWidget {
                       Container(
                         width: double.infinity,
                         decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 180, 163, 140),
+                          color: Color(0xFF5AC7AA),
                           borderRadius: BorderRadius.all(
                             Radius.circular(15),
                           ),
@@ -120,7 +120,11 @@ class SignupPage extends StatelessWidget {
                           onPressed: null,
                           child: Text(
                             "Se Cadastrar",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: Color(0xFF332E1D),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),

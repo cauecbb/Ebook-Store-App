@@ -21,7 +21,7 @@ class BookPage extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              backgroundColor: Colors.white.withOpacity(0),
+              backgroundColor: const Color(0xFFFEFFEE),
               elevation: 0.0,
               expandedHeight: 450,
               floating: false,
