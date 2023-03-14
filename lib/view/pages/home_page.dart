@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/shared/utils/utils.dart';
 
 import '../widgets/book/book_list_widget.dart';
 import '../widgets/category/category_list_widget.dart';
@@ -41,16 +42,18 @@ class HomePage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                Text(
+              children: <Widget>[
+                const Text(
                   "Mais lidos",
                   style: TextStyle(
                     fontSize: 30,
                   ),
                 ),
                 TextButton(
-                  onPressed: null,
-                  child: Text("Ver tudo"),
+                  onPressed: () {
+                    Utils.flushBarErrorMessage("Not Found", context);
+                  },
+                  child: const Text("Ver tudo"),
                 ),
               ],
             ),
