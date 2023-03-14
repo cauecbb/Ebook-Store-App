@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/pages/tabs_page.dart';
+import 'package:library_app/shared/utils/routes/routes.dart';
+import 'package:library_app/shared/utils/routes/routes_name.dart';
+import 'package:library_app/view/pages/tabs_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
         length: 3,
         child: TabsPage(),
       ),
+      initialRoute: RoutesName.home,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
