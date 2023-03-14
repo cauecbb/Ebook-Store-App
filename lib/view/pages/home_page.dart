@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/shared/utils/utils.dart';
 
-import '../widgets/book/book_list_widget.dart';
-import '../widgets/category/category_list_widget.dart';
-import '../widgets/search_widget.dart';
+import '../../resources/widgets/book/book_list_widget.dart';
+import '../../resources/widgets/category/category_list_widget.dart';
+import '../../resources/widgets/search_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

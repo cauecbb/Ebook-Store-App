@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         length: 3,
         child: TabsPage(),
       ),
-      // initialRoute: RoutesName.login,
-      // onGenerateRoute: Routes.generateRoute,
+      initialRoute: RoutesName.loginUser,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }

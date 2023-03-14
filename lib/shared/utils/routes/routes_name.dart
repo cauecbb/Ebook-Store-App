@@ -1,6 +1,7 @@
 class RoutesName {
   //accounts routes name
   static const String login = "login_page";
+  static const String loginUser = "login_user_page";
   static const String signUp = "signup_page";
 
   // homepage routes name

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../pages/book_page.dart';
+import '../../../view/pages/book_page.dart';
 
 class BookItem extends StatelessWidget {
   final String image;
