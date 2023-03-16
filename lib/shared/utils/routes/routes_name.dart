@@ -5,6 +5,7 @@ class RoutesName {
   static const String signUp = "signup_page";
 
   // homepage routes name
+  static const String tabsPage = "tabs_page";
   static const String home = "home_page";
 
   // bookpage routes name

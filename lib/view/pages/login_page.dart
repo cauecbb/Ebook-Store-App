@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/resources/components/round_button.dart';
 import 'package:library_app/shared/utils/utils.dart';
+import 'package:library_app/view_model/auth_view_model.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,7 +21,22 @@ class _LoginPageState extends State<LoginPage> {
   FocusNode passwordFocusNode = FocusNode();
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    _emailcontroller.dispose();
+    _passwordcontroller.dispose();
+
+    emailFocusNode.dispose();
+    passwordFocusNode.dispose();
+
+    _obscurePassword.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final AuthViewModel authViewModel = Provider.of<AuthViewModel>(context);
     final height = MediaQuery.of(context).size.height * 1;
 
     return Scaffold(
@@ -69,7 +87,28 @@ class _LoginPageState extends State<LoginPage> {
               valueListenable: _obscurePassword,
             ),
             SizedBox(
-              height: height * .1,
+              height: height * .08,
+            ),
+            RoundButton(
+              title: "Login",
+              loading: authViewModel.loading,
+              onPress: () {
+                if (_emailcontroller.text.isEmpty) {
+                  Utils.flushBarErrorMessage("Please enter Email", context);
+                } else if (_passwordcontroller.text.isEmpty) {
+                  Utils.flushBarErrorMessage("Please enter Password", context);
+                } else if (_passwordcontroller.text.length < 8) {
+                  Utils.flushBarErrorMessage(
+                      "Please enter 8 digit Password", context);
+                } else {
+                  Map data = {
+                    'email': _emailcontroller.text.toString(),
+                    'password': _passwordcontroller.text.toString(),
+                  };
+                  authViewModel.loginApi(data, context);
+                  print("api hit");
+                }
+              },
             ),
           ],
         ),
