@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/resources/components/round_button.dart';
+import 'package:library_app/shared/utils/routes/routes.dart';
+import 'package:library_app/shared/utils/routes/routes_name.dart';
 import 'package:library_app/shared/utils/utils.dart';
 import 'package:library_app/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
@@ -110,6 +112,14 @@ class _LoginPageState extends State<LoginPage> {
                 }
               },
             ),
+            SizedBox(
+              height: height * .02,
+            ),
+            InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesName.signUp);
+                },
+                child: const Text("Don't have an account? SignUp")),
           ],
         ),
       ),

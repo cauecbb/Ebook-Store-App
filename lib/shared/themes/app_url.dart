@@ -3,5 +3,5 @@ class AppUrl {
 
   static var loginApiEndPoint = "$baseUrl/api/login";
 
-  static var registerApiEndPoint = "$baseUrl/api/register";
+  static var signUpApiEndPoint = "$baseUrl/api/register";
 }

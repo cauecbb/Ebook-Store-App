@@ -20,7 +20,7 @@ class Routes {
             builder: (BuildContext context) => const LoginPage());
       case RoutesName.signUp:
         return MaterialPageRoute(
-            builder: (BuildContext context) => const SignupPage());
+            builder: (BuildContext context) => const SignUpPage());
       // case RouteName.book:
       //   return MaterialPageRoute(
       //       builder: (BuildContext context) => const BookPage());

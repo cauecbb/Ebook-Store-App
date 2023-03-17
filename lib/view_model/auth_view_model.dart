@@ -29,4 +29,20 @@ class AuthViewModel with ChangeNotifier {
       }
     });
   }
+
+  Future<void> signUpApi(dynamic data, BuildContext context) async {
+    setLoading(true);
+    _myRepo.signUpApi(data).then((value) {
+      Navigator.pushNamed(context, RoutesName.tabsPage);
+      setLoading(false);
+      if (kDebugMode) {
+        print(value.toString());
+      }
+    }).onError((error, stackTrace) {
+      setLoading(false);
+      if (kDebugMode) {
+        print(error.toString());
+      }
+    });
+  }
 }
